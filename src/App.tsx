@@ -1,11 +1,16 @@
+import '@mantine/core/styles.css';
+
 import { Route, Routes } from 'react-router'
-import { Home, Login } from './pages'
+import { Landing, Login } from './pages'
+import { MantineProvider } from '@mantine/core'
 
 export function App() {
   return (
-    <Routes>
-        <Route path="/" element={<Home />} />
+    <MantineProvider>
+      <Routes>
+        <Route path="/" element={<Landing />} />
         <Route path="/login" element={<Login />} />
-    </Routes>
+      </Routes>
+    </MantineProvider>
   )
 }
